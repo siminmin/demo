@@ -1,0 +1,33 @@
+*{
+	margin: 0;
+	padding: 0;
+	font-family: "微软雅黑";
+}
+.login{
+	width:303px;
+	min-height: 200px;
+	margin:60px auto;
+	text-align: center;
+}
+
+.message{
+	height: 44px;
+	line-height: 44px;
+	font-size: 20px;
+}
+form{
+
+	margin: 10px auto;
+}
+form input{
+	width: 300px;
+	height: 44px;
+	margin: 10px 0;
+	outline: none;
+	font-size: 16px;
+}
+.btn{
+	background: #0f88eb;
+	border:none;
+	color: #fff;
+}
