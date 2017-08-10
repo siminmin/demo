@@ -1,6 +1,8 @@
 Node.js实战：Express实现简单后台登录系统
+====
 
 1.建立Express项目
+====
 安装好nodejs和express框架,打开node命令行提示符,输入
 ```
 express --view=ejs -e www
@@ -13,6 +15,7 @@ npm install
 此时项目已经安装完成，可以对www下的文件进行相关操作。
 
 2.创建登录页面模版
+====
 views文件夹存放的是模版文件，我们在这个文件夹里创建一个登录页面模版，名称叫做login.ejs，模版的内容如下
 ```
 <!DOCTYPE html>  
@@ -56,6 +59,7 @@ views文件夹存放的是模版文件，我们在这个文件夹里创建一个
 将login.css保存到项目的public/stylesheets文件夹中
 
 3. 创建后台管理页面模版
+====
 创建完登录页面模版，我们再创建一个简单的后台管理页面模版，功能是当用户成功登录后显示相应的后台信息。后台管理页面模版命名为admin.ejs，文件的内容如下
 ```
 <!DOCTYPE html>  
@@ -72,6 +76,7 @@ views文件夹存放的是模版文件，我们在这个文件夹里创建一个
 此时，我们已经完成了网站后台的前端部分，接下来就是后端的实现了。
 
 4. 后端实现思路
+====
 login页面：交由login.get和login.post路由器处理。
 
 用户访问login页面时，调用login.get路由处理访问，渲染正常的登录页面。
@@ -82,6 +87,7 @@ admin页面：交由admin.get路由器处理。
 如果用户已登录，则渲染后台管理页面。
 
 4.1 login.js路由文件
+-------
 routes文件夹下存放的是路由中间件，我们首先在该文件夹下创建一个login.js文件，该文件将包含处理get请求和post请求的两个路由，用来处理登录页面的访问请求。 
 注意：这里只对登录做了简单的判断，即如果用户名和密码与预先设定的相等，就将用户名写入到cookie中，之后通过简单判断cookie值是否等于用户名来判断用户是否已经登录。 在实际中还需要进一步地修改，比如：事先将用户名存到数据库中，当用户登录后，通过特定算法F加密用户名后作为cookie值发送给浏览器。之后每当收到带有cookie的请求时，先用算法F解密cookie值后得到用户名，再到数据库中查找该用户，如果用户存在，就认为该用户已登录，将其相关信息返回给浏览器。
 ```
@@ -110,6 +116,7 @@ exports.get = getRouter;
 exports.post = postRouter;  
 ```
 4.2 admin.js路由文件
+-------
 该文件含有一个处理get请求路由，用于处理后台管理页面的访问请求。
 ```
 var express = require('express');  
@@ -126,6 +133,7 @@ getRouter.get('/admin', function (req, res) {
 exports.get = getRouter; 
 ```
 4.3 app.js主文件实现
+-------
 ```
 var express = require('express');  
 var path = require('path');  
@@ -177,6 +185,7 @@ module.exports = app;
 至此，一个简单的后台登录系统已经完成。
 
 5. 部署上线
+====
 打开命令提示符，切换到www文件夹下，然后执行
 ```
 npm start  
