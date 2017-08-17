@@ -1,0 +1,29 @@
+{
+  "name": "-",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node ./bin/www",
+    "webpack": "webpack"
+  },
+  "dependencies": {
+    "css-loader": "^0.28.4",
+    "less": "^2.7.2",
+    "less-loader": "^4.0.5",
+    "sequelize": "^4.5.0",
+    "sqlite3": "^3.1.9",
+    "style-css": "^1.0.2",
+    "style-loader": "^0.18.2",
+    "webpack": "^3.5.4"
+  },
+  "devDependencies": {
+    "express": "^4.15.4",
+    "extract-text-webpack-plugin": "^3.0.0",
+    "onchange": "^3.2.1",
+    "postcss-loader": "^2.0.6",
+    "webpack": "^3.5.4"
+  },
+  "author": "",
+  "license": "ISC"
+}
